@@ -37,3 +37,17 @@ class FeedbackViewTest(TestCase):
         expected += '<td><img src="/static/img/feedback_positive.png" /></td>'
         expected += '<td><img src="/static/img/feedback_neutral.png" /></td>'
         self.assertContains(response, expected, status_code=200)
+
+    def test_feedback_page_should_show_dashes_if_no_sentiment_set(self):
+        message = 'I wanna talk to someone or explain on some requests. ' \
+            'Not just only write down what I want you to do.'
+        Feedback.objects.create(
+            message=message
+        )
+
+        response = self.client.get(self.url)
+
+        expected = '<td>' + message + '</td>'
+        expected += '<td>---</td>'
+        expected += '<td>---</td>'
+        self.assertContains(response, expected, status_code=200)
