@@ -8,5 +8,4 @@ install:
 
 script:
   - cd sentiment_analyzer
-  - python manage.py migrate
   - python manage.py test
