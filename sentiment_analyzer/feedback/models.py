@@ -9,3 +9,17 @@ class Feedback(models.Model):
     )
 
     message = models.TextField(blank=True)
+    actual_sentiment = models.CharField(
+        null=False,
+        blank=False,
+        max_length=8,
+        choices=SENTIMENT_CHOICES,
+        default='neutral'
+    )
+    predicted_sentiment = models.CharField(
+        null=False,
+        blank=False,
+        max_length=8,
+        choices=SENTIMENT_CHOICES,
+        default='neutral'
+    )
