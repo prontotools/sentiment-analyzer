@@ -25,8 +25,8 @@
                     {% spaceless %}
                         <tr>
                             <td>{{ each.message }}</td>
-                            <td>{{ each.actual_sentiment }}</td>
-                            <td>{{ each.predicted_sentiment }}</td>
+                            <td><img src="{% static 'img' %}/feedback_{{ each.actual_sentiment }}.png" /></td>
+                            <td><img src="{% static 'img' %}/feedback_{{ each.predicted_sentiment }}.png" /></td>
                         </tr>
                     {% endspaceless %}
                     {% endfor %}

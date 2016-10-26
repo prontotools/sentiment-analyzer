@@ -34,6 +34,6 @@ class FeedbackViewTest(TestCase):
         response = self.client.get(self.url)
 
         expected = '<td>' + message + '</td>'
-        expected += '<td>positive</td>'
-        expected += '<td>neutral</td>'
+        expected += '<td><img src="/static/img/feedback_positive.png" /></td>'
+        expected += '<td><img src="/static/img/feedback_neutral.png" /></td>'
         self.assertContains(response, expected, status_code=200)
