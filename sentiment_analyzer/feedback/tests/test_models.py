@@ -23,8 +23,8 @@ class FeedbackTest(TestCase):
         actual = self.feedback.SENTIMENT_CHOICES
 
         expected = (
-            ('positive', 'Positive'),
-            ('neutral', 'Neutral'),
-            ('negative', 'Negative'),
+            ('positive', 'positive'),
+            ('neutral', 'neutral'),
+            ('negative', 'negative'),
         )
         self.assertEqual(actual, expected)
