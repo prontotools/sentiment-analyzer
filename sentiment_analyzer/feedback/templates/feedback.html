@@ -19,6 +19,17 @@
                         <th>Predicted</th>
                     {% endspaceless %}
                     </thead>
+                    <tbody>
+                    {% for each in feedback %}
+                    {% spaceless %}
+                        <tr>
+                            <td>{{ each.message }}</td>
+                            <td></td>
+                        </tr>
+                    {% endspaceless %}
+                    {% endfor %}
+                    </tbody>
+                </table>
                 </table>
             </div>
         </div>
