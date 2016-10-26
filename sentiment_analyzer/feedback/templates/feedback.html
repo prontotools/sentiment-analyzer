@@ -25,8 +25,8 @@
                     {% spaceless %}
                         <tr>
                             <td>{{ each.message }}</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ each.actual_sentiment }}</td>
+                            <td>{{ each.predicted_sentiment }}</td>
                         </tr>
                     {% endspaceless %}
                     {% endfor %}

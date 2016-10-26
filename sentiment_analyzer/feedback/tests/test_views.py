@@ -26,12 +26,14 @@ class FeedbackViewTest(TestCase):
         message = 'I wanna talk to someone or explain on some requests. ' \
             'Not just only write down what I want you to do.'
         Feedback.objects.create(
-            message=message
+            message=message,
+            actual_sentiment='positive',
+            predicted_sentiment='neutral'
         )
 
         response = self.client.get(self.url)
 
         expected = '<td>' + message + '</td>'
-        expected += '<td></td>'
-        expected += '<td></td>'
+        expected += '<td>positive</td>'
+        expected += '<td>neutral</td>'
         self.assertContains(response, expected, status_code=200)
