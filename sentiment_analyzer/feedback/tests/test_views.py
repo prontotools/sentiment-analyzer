@@ -18,6 +18,7 @@ class FeedbackViewTest(TestCase):
         response = self.client.get(self.url)
 
         expected = '<th>Message</th>'
+        expected += '<th>Actual</th>'
         expected += '<th>Predicted</th>'
         self.assertContains(response, expected, status_code=200)
 
@@ -31,5 +32,6 @@ class FeedbackViewTest(TestCase):
         response = self.client.get(self.url)
 
         expected = '<td>' + message + '</td>'
+        expected += '<td></td>'
         expected += '<td></td>'
         self.assertContains(response, expected, status_code=200)
