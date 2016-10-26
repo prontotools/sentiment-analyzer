@@ -23,6 +23,7 @@ class FeedbackTest(TestCase):
         actual = self.feedback.SENTIMENT_CHOICES
 
         expected = (
+            ('', '---'),
             ('positive', 'positive'),
             ('neutral', 'neutral'),
             ('negative', 'negative'),

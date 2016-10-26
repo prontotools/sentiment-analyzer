@@ -3,6 +3,7 @@ from django.db import models
 
 class Feedback(models.Model):
     SENTIMENT_CHOICES = (
+        ('', '---'),
         ('positive', 'positive'),
         ('neutral', 'neutral'),
         ('negative', 'negative'),
@@ -10,16 +11,16 @@ class Feedback(models.Model):
 
     message = models.TextField(blank=True)
     actual_sentiment = models.CharField(
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         max_length=8,
         choices=SENTIMENT_CHOICES,
-        default='neutral'
+        default=''
     )
     predicted_sentiment = models.CharField(
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         max_length=8,
         choices=SENTIMENT_CHOICES,
-        default='neutral'
+        default=''
     )
